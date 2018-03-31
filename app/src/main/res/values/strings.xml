@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Calorie-Cal</string>
+    <array name="Spin">
+        <item>BMR</item>
+        <item>Low</item>
+        <item>Moderate</item>
+        <item>High</item>
+    </array>
+
+</resources>
