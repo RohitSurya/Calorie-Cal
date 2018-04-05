@@ -1,8 +1,10 @@
 package com.example.rohit.calorie_cal;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,6 +34,9 @@ Intent i;
         e1=(EditText)findViewById(R.id.editText);
         e2=(EditText)findViewById(R.id.editText2);
         e3=(EditText)findViewById(R.id.editText3);
+        e1.setInputType(InputType.TYPE_CLASS_NUMBER);
+        e2.setInputType(InputType.TYPE_CLASS_NUMBER);
+        e3.setInputType(InputType.TYPE_CLASS_NUMBER);
         t1=(TextView)findViewById(R.id.textView);
         t2=(TextView)findViewById(R.id.textView2);
         t3=(TextView)findViewById(R.id.textView3);
@@ -72,17 +77,19 @@ Intent i;
                     t4.requestFocus();
                     return;
                 }
+
                 final float H=Float.parseFloat(s);
                 final float W=Float.parseFloat(s1);
                 final float A=Float.parseFloat(s2);
 
                 sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    public void onItemSelected(AdapterView<?> w, View view, int i, long l) {
                         switch (i){
-                            case 0:if(r1.isChecked()){
-                                bmr=cal(H,W,A);
-                                }
+                            case 0:
+                                if (r1.isChecked()) {
+                                    bmr=cal(H,W,A);
+                                    }
                                 if(r2.isChecked()) {
                                     bmr=cal1(H,W,A);
                                 }
